@@ -1,5 +1,7 @@
 import { Text, View } from "react-native";
-import { ThemedView} from "./components/ThemedView"
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
+
 export default function Index() {
   return (
     <ThemedView
@@ -9,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <ThemedText>Edit app/index.tsx to edit this screen.</ThemedText>
     </ThemedView>
   );
 }
