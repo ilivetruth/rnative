@@ -24,4 +24,6 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
     width: "90%", 
     height: "90%",
+    paddingTop: 10,
+    borderRadius: 25,
   }});
