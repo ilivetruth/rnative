@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet} from "react-native";
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
@@ -11,7 +11,17 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <ThemedText>Edit app/index.tsx to edit this screen.</ThemedText>
+      <View style={{styles.container}}>
+        
+      </View>
     </ThemedView>
   );
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "green",
+    width: "90%", 
+    height: "90%"
+  }
