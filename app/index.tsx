@@ -24,4 +24,4 @@ const style = StyleSheet.create({
     backgroundColor: "green",
     width: "90%", 
     height: "90%",
-  }
+  }});
