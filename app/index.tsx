@@ -11,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <View style={{styles.container}}>
+      <View style={styles.container}>
         
       </View>
     </ThemedView>
