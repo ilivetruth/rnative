@@ -23,5 +23,5 @@ const style = StyleSheet.create({
     flex: 1,
     backgroundColor: "green",
     width: "90%", 
-    height: "90%"
+    height: "90%",
   }
