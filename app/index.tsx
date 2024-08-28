@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "green",
     width: "95%", 
-    height: "85%",
+    height: "95%",
     borderRadius: 25,
   }});
