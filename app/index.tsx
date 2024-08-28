@@ -12,7 +12,7 @@ export default function Index() {
       }}
     >
       <View style={styles.container}>
-        
+        <Text>Welcome to the app!</Text>
       </View>
     </ThemedView>
   );
@@ -20,7 +20,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "green",
+    backgroundColor: "#003993",
     width: "95%", 
     height: "95%",
     borderRadius: 25,
