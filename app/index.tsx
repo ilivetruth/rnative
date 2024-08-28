@@ -12,7 +12,7 @@ export default function Index() {
       }}
     >
       <View style={styles.container}>
-        <Text>Welcome to the app!</Text>
+        <ThemedText>Welcome to the app!</ThemedText>
       </View>
     </ThemedView>
   );
