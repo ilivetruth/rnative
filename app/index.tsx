@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "green",
-    width: "90%", 
-    height: "90%",
-    paddingTop: 30,
+    width: "95%", 
+    height: "85%",
     borderRadius: 25,
   }});
