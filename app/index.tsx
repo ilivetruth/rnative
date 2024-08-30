@@ -15,21 +15,20 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <View style={styles.container}>
+      <ThemedView style={styles.container}>
         <ThemedText>Welcome to the app!</ThemedText>
         <TextInput 
         onChangeText={setInput}
         value={input}
         placeholder="Enter Amount"
         />
-      </View>
+      </ThemedView>
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#003993",
     width: "95%", 
     height: "95%",
     borderRadius: 25,
