@@ -1,8 +1,12 @@
-import { Text, View, StyleSheet} from "react-native";
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, TextInput} from "react-native";
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function Index() {
+  
+  const [input, setInput] = useState("")
+  
   return (
     <ThemedView
       style={{
@@ -13,6 +17,11 @@ export default function Index() {
     >
       <View style={styles.container}>
         <ThemedText>Welcome to the app!</ThemedText>
+        <TextInput 
+        onChangeText={setInput}
+        value={input}
+        placeholder="Enter Amount"
+        />
       </View>
     </ThemedView>
   );
