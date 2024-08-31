@@ -17,10 +17,12 @@ export default function Index() {
     >
       <ThemedView style={styles.container}>
         <ThemedText>Welcome to the app!</ThemedText>
-        <TextInput 
+        <TextInput style={styles.input}
         onChangeText={setInput}
         value={input}
         placeholder="Enter Amount"
+        placeholderTextColor='green'
+        keyboardType="numeric"
         />
       </ThemedView>
     </ThemedView>
@@ -32,4 +34,8 @@ const styles = StyleSheet.create({
     width: "95%", 
     height: "95%",
     borderRadius: 25,
-  }});
+  },
+  input: {
+    color: 'green',
+  }
+});
