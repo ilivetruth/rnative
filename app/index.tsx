@@ -5,7 +5,6 @@ import { ThemedView } from '@/components/ThemedView';
 
 export default function Index() {
   
-  const [input, setInput] = useState("")
   const [amount, setAmount] = useState(''); // State to hold the amount as a string
   const [time, setTime] = useState(null); // State to hold the time as a Date object
 
@@ -24,8 +23,8 @@ export default function Index() {
       <ThemedView style={styles.container}>
         <ThemedText>Welcome to the app!</ThemedText>
         <TextInput style={styles.input}
-        onChangeText={setInput}
-        value={input}
+        onChangeText={setAmount}
+        value={amount}
         placeholder="Enter Amount"
         placeholderTextColor='green'
         keyboardType="numeric"
