@@ -33,8 +33,8 @@ export default function Index() {
         <Button title="Set Time" onPress={handleButtonPress} />
         {time && (
         <View style={{ marginTop: 20 }}>
-          <Text>Amount: {amount}</Text>
-          <Text>Time: {time.toString()}</Text>
+          <Text style={styles.input}>Amount: {amount}</Text>
+          <Text style={styles.input}>Time: {time.toString()}</Text>
         </View>
       )}
       </ThemedView>
