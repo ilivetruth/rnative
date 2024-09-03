@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TextInput} from "react-native";
+import { Text, View, StyleSheet, TextInput, Button } from "react-native";
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function Index() {
   
   const [input, setInput] = useState("")
+  const [amount, setAmount] = useState(''); // State to hold the amount as a string
+  const [time, setTime] = useState(null); // State to hold the time as a Date object
+
+  const handleButtonPress = () => {
+    setTime(new Date()); // Set the current time when the button is pressed
+  };
   
   return (
     <ThemedView
@@ -24,6 +30,13 @@ export default function Index() {
         placeholderTextColor='green'
         keyboardType="numeric"
         />
+        <Button title="Set Time" onPress={handleButtonPress} />
+        {time && (
+        <View style={{ marginTop: 20 }}>
+          <Text>Amount: {amount}</Text>
+          <Text>Time: {time.toString()}</Text>
+        </View>
+      )}
       </ThemedView>
     </ThemedView>
   );
