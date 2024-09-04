@@ -82,5 +82,5 @@ const styles = StyleSheet.create({
   },
   input: {
     color: 'green',
-  }
+  },
 });
