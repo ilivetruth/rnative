@@ -5,7 +5,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-export default function Index() {
+export default function index() {
   const [amount, setAmount] = useState('');
   const [time, setTime] = useState(null);
   const [showPicker, setShowPicker] = useState(false);
