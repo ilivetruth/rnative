@@ -21,12 +21,11 @@ export default function index() {
     setShowPicker(true);
   };
 
-  const handleDateChange = (event, selectedDate) => {
-    const chosenDate = selectedDate || time;
-    setShowPicker(Platform.OS === 'ios'); 
-    setTime(chosenDate);
-    setData({ amount, time: chosenDate }); // Save amount and chosen time in the object
-  };
+  const handleDateChange = (event: Event, selectedDate?: Date) => {
+    if (event.type === 'dismissed') {
+      setShowPicker(false); // Close the picker if dismissed
+      return;
+    }
 
   return (
     <ThemedView
