@@ -1,17 +1,31 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TextInput, Button } from "react-native";
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { View, Text, TextInput, Button, Platform } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { ThemedView, ThemedText } from './path-to-your-themed-components'; // Update with actual path
 
 export default function Index() {
-  
-  const [amount, setAmount] = useState(''); // State to hold the amount as a string
-  const [time, setTime] = useState(null); // State to hold the time as a Date object
+  const [amount, setAmount] = useState('');
+  const [time, setTime] = useState(null);
+  const [showPicker, setShowPicker] = useState(false);
+  const [data, setData] = useState({ amount: '', time: null }); // State to hold the object with amount and time
 
-  const handleButtonPress = () => {
-    setTime(new Date()); // Set the current time when the button is pressed
+  const handleSetCurrentTime = () => {
+    const currentTime = new Date();
+    setTime(currentTime);
+    setData({ amount, time: currentTime }); // Save amount and current time in the object
   };
-  
+
+  const handleShowPicker = () => {
+    setShowPicker(true);
+  };
+
+  const handleDateChange = (event, selectedDate) => {
+    const chosenDate = selectedDate || time;
+    setShowPicker(Platform.OS === 'ios'); 
+    setTime(chosenDate);
+    setData({ amount, time: chosenDate }); // Save amount and chosen time in the object
+  };
+
   return (
     <ThemedView
       style={{
@@ -22,20 +36,38 @@ export default function Index() {
     >
       <ThemedView style={styles.container}>
         <ThemedText>Welcome to the app!</ThemedText>
-        <TextInput style={styles.input}
-        onChangeText={setAmount}
-        value={amount}
-        placeholder="Enter Amount"
-        placeholderTextColor='green'
-        keyboardType="numeric"
+        
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => {
+            setAmount(text);
+            setData({ amount: text, time }); // Update amount in the object
+          }}
+          value={amount}
+          placeholder="Enter Amount"
+          placeholderTextColor="green"
+          keyboardType="numeric"
         />
-        <Button title="Set Time" onPress={handleButtonPress} />
-        {time && (
-        <View style={{ marginTop: 20 }}>
-          <Text style={styles.input}>Amount: {amount}</Text>
-          <Text style={styles.input}>Time: {time.toString()}</Text>
-        </View>
-      )}
+        
+        <Button title="Set Current Time" onPress={handleSetCurrentTime} />
+
+        <Button title="Pick Date & Time" onPress={handleShowPicker} />
+
+        {showPicker && (
+          <DateTimePicker
+            value={time || new Date()}
+            mode="datetime"
+            display="default"
+            onChange={handleDateChange}
+          />
+        )}
+
+        {data.time && (
+          <View style={{ marginTop: 20 }}>
+            <Text style={styles.input}>Amount: {data.amount}</Text>
+            <Text style={styles.input}>Time: {data.time.toString()}</Text>
+          </View>
+        )}
       </ThemedView>
     </ThemedView>
   );
