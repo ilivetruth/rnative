@@ -25,7 +25,7 @@ export default function index() {
     if (event.type === 'dismissed') {
       setShowPicker(false); // Close the picker if dismissed
       return;
-    }
+    };
 
   return (
     <ThemedView
