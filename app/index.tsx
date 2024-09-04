@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Platform } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { ThemedView, ThemedText } from './path-to-your-themed-components'; // Update with actual path
+import { ThemedView, ThemedText } from './components'; // Update with actual path
+
+
 
 export default function Index() {
   const [amount, setAmount] = useState('');
